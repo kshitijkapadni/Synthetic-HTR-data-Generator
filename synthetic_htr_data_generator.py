@@ -19,9 +19,12 @@ with open(words_path_json) as file:
 fontScale = 32 # font size
  
 color = (0, 0, 0) # font color
-output_path = 'synthetic_htr_data' # path to save images
+output_path = 'sample_output' # path to save images
+if not os.path.exists(output_path):
+    os.makedirs(output_path+'\\images')
+
 datafile = open(os.path.join(output_path,'datafile.txt'),'w')
-no_images_per_font = 10000 # number of images to generate
+no_images_per_font = 10 # number of images to generate
 
 for font_name in fonts:
     for i in range(no_images_per_font):
